@@ -1,0 +1,151 @@
+*{
+    box-sizing: border-box;
+    text-transform: capitalize;
+    padding:0;
+    margin:0;
+}
+body{
+    color:white;
+    background: rgb(39,41,68);
+}
+header{
+    display:flex;
+    justify-content: space-around;
+    text-align: center;
+    column-gap: 2px;
+    margin: 25px 0;
+}
+header h2{
+    padding: 8px;
+}
+section{
+    display:flex;
+    max-width: 500px;
+    margin: 10% auto;
+    flex-direction: column;
+    text-align: center;
+    gap:80px;
+    transition: opacity ease 0.8s;
+}
+section button{
+ width:20%;
+ margin:0 auto;
+ padding:8px 8px;
+ background: rgb(45,117,96);
+ color:white;
+ border:none;
+ border-radius:5px;
+ cursor: pointer;
+
+}
+aside{
+    display:flex;
+    max-width: 800px;
+    margin: 10% auto;
+    text-align: center;
+    position: relative;
+}
+body > aside > div{
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(3fr,minmax(10px,auto));
+    position: absolute;
+    top:-300px;
+    transition: opacity 0.8s ease 0.8s;
+}
+body > aside > div > h1{
+    grid-column: 2/3;
+}
+aside img{
+    display: inline-block;
+    width:200px;
+
+}
+aside img.player-hand{
+    transform: rotateY(200deg);
+    grid-column: 1/2;
+    justify-self: start;
+}
+aside img.computer-hand{
+    grid-column:3/4;
+    justify-self: end;
+}
+body > aside > div > button.btn-one{
+    width:37%;
+    justify-self: center;
+    padding:8px 0px;
+    color:white;
+    background: rgb(45,117,96);
+    border: none; 
+    border-radius: 5px; 
+}
+body > aside > div > button.btn-two{
+    width:37%;
+    justify-self: center;
+    color:white;
+    background: rgb(45,117,96);
+    border: none;
+    border-radius: 5px;
+}
+body > aside > div > button.btn-three{
+    width:37%;
+    justify-self: center;
+    color:white;
+    background: rgb(45,117,96);
+    border: none;
+    border-radius: 5px;
+}
+.fadein{
+    opacity: 1;
+}
+.fadeout{
+    opacity: 0;
+    pointer-events: none;
+}
+@keyframes shakePlayer{
+    0%{
+        transform: translateY(0px) rotateY(200deg);
+    }
+    15%{
+        transform: translateY(-50px) rotateY(200deg);
+    }
+    25%{
+        transform: translateY(0px) rotateY(200deg);
+    }
+    35%{
+        transform: translateY(-50px) rotateY(200deg);
+    }
+    50%{
+        transform: translateY(0px) rotateY(200deg);
+    }
+    65%{
+        transform: translateY(-50px) rotateY(200deg);
+    }
+   
+    100%{
+        transform: translateY(0px) rotateY(200deg);
+    }
+}
+@keyframes shakeComputer{
+    0%{
+        transform: translateY(0px);
+    }
+    15%{
+        transform: translateY(-50px);
+    }
+    25%{
+        transform: translateY(0px);
+    }
+    35%{
+        transform: translateY(-50px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    65%{
+        transform: translateY(-50px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
